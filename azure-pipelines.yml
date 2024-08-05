@@ -11,24 +11,17 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
+    echo "Current working directory:"
+    pwd
+    echo "Contents of the current directory:"
+    ls -al
+    echo "Contents of the parent directory:"
+    ls -al ..
+  displayName: 'Print working directory and list files'
+
+- script: |
     npm install -g @angular/cli@17.0.0
     npm install --legacy-peer-deps
     ng build --output-path=dist/client
   displayName: 'npm install and build'
-  workingDirectory: 'client'  # Ensure this path points to your client directory
-
-# Uncomment these steps if you want to archive and publish the build artifacts
-# - task: ArchiveFiles@2
-#   displayName: 'Archive files'
-#   inputs:
-#     rootFolderOrFile: '$(System.DefaultWorkingDirectory)/client/dist/client/'
-#     includeRootFolder: false
-#     archiveType: zip
-#     archiveFile: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
-#     replaceExistingArchive: true
-
-# - task: PublishBuildArtifacts@1
-#   inputs:
-#     PathtoPublish: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
-#     ArtifactName: 'drop'
-#     publishLocation: 'Container'
+  workingDirectory: 'client'  # Adjust this path to point to your client directory
