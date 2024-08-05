@@ -15,7 +15,7 @@ steps:
     npm install --legacy-peer-deps
     ng build
   displayName: 'npm install and build'
-  workingDirectory: '$(System.DefaultWorkingDirectory)/client/dist/client/'
+  workingDirectory: '$(System.DefaultWorkingDirectory)/client/'
 
 - task: ArchiveFiles@2
   displayName: 'Archive files'
