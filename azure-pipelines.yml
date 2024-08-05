@@ -17,6 +17,12 @@ steps:
     ls -al
     echo "Contents of the parent directory:"
     ls -al ..
+    echo "Contents of the grandparent directory:"
+    ls -al ../..
+    echo "Contents of the workspace root:"
+    ls -al /home/vsts/work/1/
+    echo "Contents of the workspace:"
+    ls -al /home/vsts/work/
   displayName: 'Print working directory and list files'
 
 - script: |
@@ -24,4 +30,4 @@ steps:
     npm install --legacy-peer-deps
     ng build --output-path=dist/client
   displayName: 'npm install and build'
-  workingDirectory: 'client'  # Adjust this path to point to your client directory
+  workingDirectory: 'client'  # Adjust this path based on the printed directory structure
