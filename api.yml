@@ -10,7 +10,7 @@ pool:
   vmImage: 'windows-latest'
 
 variables:
-  solution: '**/DatingApp/API/*.sln'  # Adjust the solution path if necessary
+  solution: '**/DatingApp/*.sln'  # Adjust the solution path if necessary
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
 
