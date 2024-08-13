@@ -33,6 +33,7 @@ export class AppComponent implements OnInit {
   // 'http://localhost:5001/api/users'
   // 'http://datingapptylerp/api/users'
   getUsers() {
+    console.log(`${environment.apiUrl}/users`)
     this.http.get(`${environment.apiUrl}/users`).subscribe({
       next: (response) => (this.users = response),
       error: (error) => console.log(error),
