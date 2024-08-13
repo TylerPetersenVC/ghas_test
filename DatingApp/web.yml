@@ -18,7 +18,7 @@ steps:
 - script: |
     npm install -g @angular/cli@18.0.0-rc.3
     npm install --legacy-peer-deps
-    ng build --base-href /browser/
+    ng build --configuration=production --base-href /browser/
   displayName: 'npm install and build'
   workingDirectory: '$(System.DefaultWorkingDirectory)/DatingApp/client/'
 

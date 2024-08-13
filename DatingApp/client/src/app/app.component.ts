@@ -4,6 +4,7 @@ import { Component, inject, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { NavComponent } from './nav/nav.component';
 import { AccountService } from './_services/account.service';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -29,8 +30,10 @@ export class AppComponent implements OnInit {
     this.accountService.currentUser.set(user);
   }
 
+  // 'http://localhost:5001/api/users'
+  // 'http://datingapptylerp/api/users'
   getUsers() {
-    this.http.get('http://localhost:5001/api/users').subscribe({
+    this.http.get(`${environment.apiUrl}/users`).subscribe({
       next: (response) => (this.users = response),
       error: (error) => console.log(error),
       complete: () => console.log('Request has completed.'),
