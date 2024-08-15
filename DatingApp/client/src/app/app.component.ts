@@ -20,7 +20,6 @@ export class AppComponent implements OnInit {
   users: any;
 
   ngOnInit(): void {
-    console.log('Environment: ', environment);
     this.getUsers();
   }
 
@@ -31,10 +30,11 @@ export class AppComponent implements OnInit {
     this.accountService.currentUser.set(user);
   }
 
-  // 'http://localhost:5001/api/users'
-  // 'http://datingapptylerp/api/users'
+  // 'https://localhost:4200/api/users' --> Dev
+  // 'http://datingapptylerp/api/mockusers' --> Prod
   getUsers() {
-    this.http.get(`${environment.apiUrl}${environment.users}`).subscribe({
+    const envUsers = environment.production ? '/users' : '/mockusers';
+    this.http.get(`${environment.apiUrl}${envUsers}`).subscribe({
       next: (response) => (this.users = response),
       error: (error) => console.log(error),
       complete: () => console.log('Request has completed.'),
