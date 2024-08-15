@@ -21,8 +21,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     console.log('Environment: ', environment);
-    // this.getUsers();
-    this.getMockUsers();
+    this.getUsers();
   }
 
   setCurrentUser() {
@@ -35,15 +34,7 @@ export class AppComponent implements OnInit {
   // 'http://localhost:5001/api/users'
   // 'http://datingapptylerp/api/users'
   getUsers() {
-    this.http.get(`${environment.apiUrl}/users`).subscribe({
-      next: (response) => (this.users = response),
-      error: (error) => console.log(error),
-      complete: () => console.log('Request has completed.'),
-    });
-  }
-
-  getMockUsers() {
-    this.http.get(`${environment.apiUrl}/mockusers`).subscribe({
+    this.http.get(`${environment.apiUrl}${environment.users}`).subscribe({
       next: (response) => (this.users = response),
       error: (error) => console.log(error),
       complete: () => console.log('Request has completed.'),
