@@ -10,7 +10,7 @@ import { environment } from '../../environments/environment';
 export class AccountService {
   private http = inject(HttpClient);
   baseUrl = environment.production
-    ? 'https://ENTISDDWAPP03.ent.co.ventura.ca.us/api/'
+    ? 'http://datingapptylerpapi/api/'
     : 'https://localhost:5002/api/';
   currentUser = signal<User | null>(null);
 
