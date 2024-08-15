@@ -9,9 +9,7 @@ import { environment } from '../../environments/environment';
 })
 export class AccountService {
   private http = inject(HttpClient);
-  baseUrl = environment.production
-    ? 'http://datingapptylerpapi/api/'
-    : 'https://localhost:5002/api/';
+  baseUrl = 'https://localhost:5002/api/';
   currentUser = signal<User | null>(null);
 
   login(model: any) {
