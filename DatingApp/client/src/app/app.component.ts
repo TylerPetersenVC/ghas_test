@@ -21,8 +21,8 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     console.log('Environment: ', environment);
-    this.getUsers();
-    // this.getMockUsers();
+    // this.getUsers();
+    this.getMockUsers();
   }
 
   setCurrentUser() {
