@@ -35,7 +35,7 @@ export class AppComponent implements OnInit {
   // 'http://datingapptylerp/api/mockusers' --> Prod
   getUsers() {
     // const envUsers = environment.production ? '/mockusers' : '/users';
-    this.http.get(`${environment.apiUrl}/users`).subscribe({
+    this.http.get('http://localhost:5001/api/users').subscribe({
       next: (response) => (this.users = response),
       error: (error) => console.log(error),
       complete: () => console.log('Request has completed.'),
