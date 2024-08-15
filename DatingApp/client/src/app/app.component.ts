@@ -33,7 +33,7 @@ export class AppComponent implements OnInit {
   // 'https://localhost:4200/api/users' --> Dev
   // 'http://datingapptylerp/api/mockusers' --> Prod
   getUsers() {
-    const envUsers = environment.production == true ? '/users' : '/mockusers';
+    const envUsers = environment.production ? '/mockusers' : '/users';
     this.http.get(`${environment.apiUrl}${envUsers}`).subscribe({
       next: (response) => (this.users = response),
       error: (error) => console.log(error),
