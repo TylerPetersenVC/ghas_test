@@ -9,14 +9,18 @@ builder.Services.AddIdentityServices(builder.Configuration);
 var app = builder.Build();
 
 // Configure the HTTP request pipeline
-app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod().WithOrigins(
-    "http://localhost:4200",
-    "https://localhost:4200",
-    "http://datingapptylerp",
-    "https://datingapptylerp",
-    "http://datingapptylerpapi",
-    "https://datingapptylerpapi"
-));
+app.UseCors(x =>
+    x.AllowAnyHeader()
+    .AllowAnyMethod().AllowAnyOrigin()
+// .WithOrigins(
+//     "http://localhost:4200",
+//     "https://localhost:4200",
+//     "http://datingapptylerp",
+//     "https://datingapptylerp",
+//     "http://datingapptylerpapi",
+//     "https://datingapptylerpapi"
+// )
+);
 
 app.UseAuthentication();
 app.UseAuthorization();
