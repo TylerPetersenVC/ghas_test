@@ -17,10 +17,10 @@ export class NavComponent {
   login() {
     this.accountService.login(this.model).subscribe({
       next: (response) => {
-        console.log(response);
+        console.log('MODEL1: ', this.model, response);
       },
       error: (error) => {
-        console.log(error);
+        console.log('MODEL2: ', this.model, error);
       },
     });
   }
