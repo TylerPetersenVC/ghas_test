@@ -10,7 +10,7 @@ public class BuggyController(DataContext context) : BaseApiController
     [HttpGet("auth")]
     public ActionResult<string> GetAuth()
     {
-        return "secret text";
+        return Unauthorized();
     }
     [HttpGet("not-found")]
     public ActionResult<AppUser> GetNotFound()
