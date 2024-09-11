@@ -130,3 +130,4 @@ C:\Users\134988\source\repos\Training (Dating App) - Tyler Petersen\DatingApp\AP
 C:\Users\134988\source\repos\Training (Dating App) - Tyler Petersen\DatingApp\API\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
 C:\Users\134988\source\repos\Training (Dating App) - Tyler Petersen\DatingApp\API\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\134988\source\repos\Training (Dating App) - Tyler Petersen\DatingApp\API\bin\Debug\net8.0\Data\UserSeedData.json
+C:\Users\134988\source\repos\Training (Dating App) - Tyler Petersen\DatingApp\API\bin\Debug\net8.0\AutoMapper.dll
