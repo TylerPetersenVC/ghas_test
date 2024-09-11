@@ -9,7 +9,7 @@ import { environment } from '../../environments/environment';
 })
 export class AccountService {
   private http = inject(HttpClient);
-  baseUrl = 'https://localhost:5002/api/';
+  baseUrl = environment.apiUrl;
   currentUser = signal<User | null>(null);
 
   login(model: any) {

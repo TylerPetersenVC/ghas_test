@@ -1,6 +1,6 @@
-export interface User {
-    username: string;
-    token: string;
-}
+import { model } from '@angular/core';
 
-// testing pipeline
+export interface User {
+  username: string;
+  token: string;
+}
