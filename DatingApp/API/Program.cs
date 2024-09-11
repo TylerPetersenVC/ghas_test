@@ -48,7 +48,4 @@ catch (Exception ex)
     logger.LogError(ex, "An error occurred during migration");
 }
 
-// Configure the app to listen on a specific port (e.g., 5000)
-// app.Urls.Add("http://localhost:5003");
-
 app.Run();

@@ -13,6 +13,7 @@ variables:
   solution: '**/*.sln'  # Adjust the solution path if necessary
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
+  ASPNETCORE_ENVIRONMENT: 'Production'  # Set the environment to Production
 
 steps:
 - task: NuGetToolInstaller@1
