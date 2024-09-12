@@ -10,5 +10,6 @@ import { RouterLink } from '@angular/router';
   styleUrl: './member-card.component.css',
 })
 export class MemberCardComponent {
+  // new input method
   member = input.required<Member>();
 }
