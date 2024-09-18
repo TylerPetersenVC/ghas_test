@@ -64,7 +64,7 @@
           <h4 class="mt-2">Looking for</h4>
           <textarea
             class="form-control"
-            name="lookingFor" 
+            name="lookingFor"
             [(ngModel)]="member.lookingFor"
             rows="6"
           ></textarea>
@@ -94,7 +94,12 @@
           </div>
         </form>
       </tab>
-      <tab heading="Edit Photos"> Photo edit will go here </tab>
+      <tab heading="Edit Photos">
+        <app-photo-editor
+          [member]="member"
+          (memberChange)="onMemberChange($event)"
+        ></app-photo-editor>
+      </tab>
     </tabset>
   </div>
 </div>
