@@ -1,2 +1,3 @@
 # Ignore appsettings files that might contain sensitive data
 appsettings.json
+appsettings.*.json
