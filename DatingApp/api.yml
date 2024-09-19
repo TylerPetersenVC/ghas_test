@@ -14,6 +14,7 @@ variables:
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
   ASPNETCORE_ENVIRONMENT: 'Production'  # Set the environment to Production
+  ConnectionStrings__DefaultConnection: 'Data source=dating.db' # Using SQLite db
 
 steps:
 - task: NuGetToolInstaller@1
