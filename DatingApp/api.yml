@@ -14,7 +14,12 @@ variables:
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
   ASPNETCORE_ENVIRONMENT: 'Production'  # Set the environment to Production
-  ConnectionStrings__DefaultConnection: 'Data source=dating.db' # Using SQLite db
+  ConnectionStrings__DefaultConnection: $(ConnectionStrings__DefaultConnection)
+  TokenKey: $(TokenKey)
+  CloudinarySettings__CloudName: $(CloudinarySettings__CloudName)
+  CloudinarySettings__ApiKey: $(CloudinarySettings__ApiKey)
+  CloudinarySettings__ApiSecret: $(CloudinarySettings__ApiSecret)
+  AllowedHosts: $(AllowedHosts)
 
 steps:
 - task: NuGetToolInstaller@1
