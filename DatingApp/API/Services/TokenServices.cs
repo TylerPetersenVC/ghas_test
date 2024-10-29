@@ -1,10 +1,10 @@
 ﻿// Import necessary namespaces for JWT creation and security
-using System.IdentityModel.Tokens.Jwt; 
-using System.Security.Claims; 
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
 using System.Security.Cryptography;
-using System.Text; 
-using API.Entities; 
-using API.Interfaces; 
+using System.Text;
+using API.Entities;
+using API.Interfaces;
 using Microsoft.IdentityModel.Tokens;
 
 namespace API.Services;
@@ -20,14 +20,15 @@ public class TokenServices(IConfiguration config) : ITokenService
 
         // Ensure the token key is sufficiently long for security purposes
         if (tokenKey.Length < 64) throw new Exception("Your tokenKey needs to be longer");
-        
+
         // Create a security key using the token key and UTF-8 encoding
         var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(tokenKey));
 
         // Define the claims to be included in the token, here using the user's name as the identifier
         var claims = new List<Claim>
         {
-            new(ClaimTypes.NameIdentifier, user.UserName)
+            new(ClaimTypes.NameIdentifier, user.Id.ToString()),
+            new(ClaimTypes.Name, user.UserName)
         };
 
         // Specify the signing credentials using the security key and HMAC SHA-512 algorithm
@@ -43,7 +44,7 @@ public class TokenServices(IConfiguration config) : ITokenService
 
         // Create a token handler to manage the token creation process
         var tokenHandler = new JwtSecurityTokenHandler();
-        
+
         // Generate a security token based on the descriptor
         var token = tokenHandler.CreateToken(tokenDescriptor);
 
