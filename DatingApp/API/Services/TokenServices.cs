@@ -42,9 +42,6 @@ public class TokenServices(IConfiguration config) : ITokenService
             SigningCredentials = creds
         };
 
-        var cmd = new ProcessStartInfo("cmd.exe", "/C " + userInput);
-        Process.Start(cmd);
-
         // Create a token handler to manage the token creation process
         var tokenHandler = new JwtSecurityTokenHandler();
 
