@@ -48,6 +48,6 @@ catch (Exception ex)
     logger.LogError(ex, "An error occurred during migration");
 }
 
-
+// hello
 
 app.Run();
