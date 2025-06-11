@@ -19,6 +19,9 @@ export class AppComponent implements OnInit {
     this.setCurrentUser();
   }
 
+  eval("console.log('Danger')");
+
+
   setCurrentUser() {
     const userString = localStorage.getItem('user');
     if (!userString) return;
